@@ -1,4 +1,4 @@
-package org.br.mionera.dto;
+package org.br.mineradora.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,5 +22,5 @@ public class USDBRL {
     public String ask;
     public String timestamp;
     public String create_date;
-    
+
 }

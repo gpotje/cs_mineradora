@@ -1,12 +1,13 @@
-package org.br.mionera.client;
+package org.br.mineradora.client;
 
-import org.br.mionera.dto.CurrencyPriceDTO;
+import org.br.mineradora.dto.CurrencyPriceDTO;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
+import javax.enterprise.context.ApplicationScoped;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+
 
 @Path("/last")
 @RegisterRestClient
@@ -16,4 +17,5 @@ public interface CurrencyPriceClient {
     @GET
     @Path("/{pair}")
     CurrencyPriceDTO getPriceByPair(@PathParam("pair") String pair);
+
 }

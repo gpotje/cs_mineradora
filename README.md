@@ -1,4 +1,4 @@
-# cotacao
+# cotacao Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -35,12 +35,12 @@ The application, packaged as an _über-jar_, is now runnable using `java -jar ta
 
 You can create a native executable using: 
 ```shell script
-./mvnw package -Dnative
+./mvnw package -Pnative
 ```
 
 Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
 ```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
+./mvnw package -Pnative -Dquarkus.native.container-build=true
 ```
 
 You can then execute your native executable with: `./target/cotacao-1.0.0-SNAPSHOT-runner`
@@ -51,17 +51,3 @@ If you want to learn more about building native executables, please consult http
 
 - Hibernate ORM with Panache ([guide](https://quarkus.io/guides/hibernate-orm-panache)): Simplify your persistence code for Hibernate ORM via the active record or the repository pattern
 - Apache Kafka Streams ([guide](https://quarkus.io/guides/kafka-streams)): Implement stream processing applications based on Apache Kafka
-- JDBC Driver - PostgreSQL ([guide](https://quarkus.io/guides/datasource)): Connect to the PostgreSQL database via JDBC
-
-## Provided Code
-
-### Hibernate ORM
-
-Create your first JPA entity
-
-[Related guide section...](https://quarkus.io/guides/hibernate-orm)
-
-[Related Hibernate with Panache section...](https://quarkus.io/guides/hibernate-orm-panache)
-
-# cs_mineradora
-# cs_mineradora
