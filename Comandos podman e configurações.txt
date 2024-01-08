@@ -9,3 +9,5 @@ importar o arquivo "quarkus-realm.json"
 
 ==========================================quarkus====================================
 mvn quarkus:dev
+
+http://localhost:8091/q/dev/ --> mostra dependencias do projeto 

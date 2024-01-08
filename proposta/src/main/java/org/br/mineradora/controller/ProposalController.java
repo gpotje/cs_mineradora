@@ -1,31 +1,39 @@
 package org.br.mineradora.controller;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
+import io.quarkus.security.Authenticated;
 import org.br.mineradora.dto.ProposalDetailsDTO;
 import org.br.mineradora.service.ProposalService;
+
+import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Path("/api/proposal")
+@Authenticated
 public class ProposalController {
 
     @Inject
     ProposalService service;
 
+    @Inject
+    JsonWebToken jsonWebToken;
+
     private final Logger LOG = LoggerFactory.getLogger(ProposalController.class);
 
     @GET
     @Path("/{id}")
-   // @RolesAllowed({"user","manager"})
+    @RolesAllowed({"user","manager"})
     public Response findDetailsProposal(@PathParam("id") long id){
         return Response.ok(service.findFullProposal(id)).build();
      }
 
     @POST
-    //@RolesAllowed("proposal-customer")
+    @RolesAllowed("proposal-customer")
     public Response createProposal(ProposalDetailsDTO proposalDetails){
 
         LOG.info("--- Recebendo Proposta de Compra ---");
