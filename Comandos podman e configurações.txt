@@ -1,0 +1,11 @@
+==========================================banco postgres====================================
+podman run --name imagen-postgres -e "POSTGRES_PASSWORD=postgres" -p 5433:5432  -d postgres
+podman start imagen-postgres
+
+==========================================keycloak====================================
+podman run --name keycloak -p 8180:8080 -e KEYCLOAK_ADMIN=admin -eKEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:17.0.0 start-dev
+podman start keycloak
+importar o arquivo "quarkus-realm.json"
+
+==========================================quarkus====================================
+mvn quarkus:dev
