@@ -1,5 +1,6 @@
 #Maven
 target/
+cotacao/target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -38,3 +39,8 @@ nb-configuration.xml
 
 # Local environment
 .env
+
+# Plugin directory
+/.quarkus/cli/plugins/
+/src/git.properties
+/src/main/resources/git.properties
