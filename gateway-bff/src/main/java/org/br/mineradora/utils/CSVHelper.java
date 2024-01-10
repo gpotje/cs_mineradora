@@ -8,11 +8,8 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-
 
 public class CSVHelper {
 
@@ -26,7 +23,6 @@ public class CSVHelper {
                 CSVPrinter csvPrinter =
                         new CSVPrinter(new PrintWriter(out), format);) {
             for (OpportunityDTO opps : opportunities) {
-
                 List<String> data = Arrays.asList(String.
                                 valueOf(opps.getProposalId()),opps.getCustomer(), String.valueOf(opps.getPriceTonne()),
                         String.valueOf(opps.getLastDollarQuotation()));
@@ -43,8 +39,5 @@ public class CSVHelper {
                     +e.getMessage());
         }
     }
-
-
-
 
 }

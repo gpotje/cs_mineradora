@@ -7,13 +7,11 @@ import org.br.mineradora.entity.OpportunityEntity;
 import org.br.mineradora.entity.QuotationEntity;
 import org.br.mineradora.repository.OpportunityRepository;
 import org.br.mineradora.repository.QuotationRepository;
-import org.br.mineradora.utils.CSVHelper;
 import org.eclipse.microprofile.opentracing.Traced;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -58,6 +56,8 @@ public class OpportunityServiceImpl implements OpportunityService {
 
     }
 
+
+
     @Override
     public List<OpportunityDTO> generateOpportunityData() {
 
@@ -77,23 +77,6 @@ public class OpportunityServiceImpl implements OpportunityService {
 
         return opportunities;
 
-    }
-
-    @Override
-    public ByteArrayInputStream generateCSVOpportunityReport() {
-
-        List<OpportunityDTO> dto = new ArrayList<>();
-
-        opportunityRepository.findAll().list().forEach(item-> {
-            dto.add(OpportunityDTO.builder()
-                    .proposalId(item.getProposalId())
-                    .customer("TESTETESTE")
-                    .priceTonne(item.getPriceTonne())
-                    .lastDollarQuotation(item.getLastDollarQuotation())
-                    .build());
-        });
-
-        return CSVHelper.OpportunitiesToCSV(dto);
     }
 
 

@@ -55,7 +55,7 @@ public class ProposalController {
 
     @DELETE
     @Path("/{id}")
-  //  @RolesAllowed("manager")
+   @RolesAllowed("manager")
     public Response removeProposal(@PathParam("id") long id){
          try {
             service.removeProposal(id);
