@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "cb6ec4e6-631c-4aa5-b926-8351784a6321",
+		"name": "Mineradora",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16085054"
+	},
+	"item": [
+		{
+			"name": "Proposal All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8091/api/proposal/69",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"api",
+						"proposal",
+						"69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proposal create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"proposalId\":1231,\r\n    \"customer\": \"cemig2\",\r\n    \"priceTonne\": 15.00,\r\n    \"tonnes\": 15000,\r\n    \"country\": \"BRASIL\",\r\n    \"proposalValidityDays\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8091/api/proposal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"api",
+						"proposal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/opportunity/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"opportunity",
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtem token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "backend-service",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "gabriel",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8180/realms/quarkus/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"realms",
+						"quarkus",
+						"protocol",
+						"openid-connect",
+						"token"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "gabriel",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"disabled": true
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

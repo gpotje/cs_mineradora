@@ -7,7 +7,13 @@ podman run --name keycloak -p 8180:8080 -e KEYCLOAK_ADMIN=admin -eKEYCLOAK_ADMIN
 podman start keycloak
 importar o arquivo "quarkus-realm.json"
 
+POST --> http://localhost:8180/realms/quarkus/protocol/openid-connect/token 
+gerar token
+
 ==========================================quarkus====================================
 mvn quarkus:dev
 
 http://localhost:8091/q/dev/ --> mostra dependencias do projeto 
+
+
+
